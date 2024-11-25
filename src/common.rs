@@ -810,7 +810,7 @@ pub fn check_software_update() {
 
 #[tokio::main(flavor = "current_thread")]
 async fn check_software_update_() -> hbb_common::ResultType<()> {
-    let url = "https://github.com/x2in/rustdesk-itforme/releases/latest";
+    let url = "https://github.com/x2in/rustdesk_itforme/releases/latest";
     let latest_release_response = create_http_client_async().get(url).send().await?;
     let latest_release_version = latest_release_response
         .url()
@@ -1186,6 +1186,7 @@ pub fn check_process(arg: &str, mut same_uid: bool) -> bool {
 }
 
 pub async fn secure_tcp(conn: &mut FramedStream, key: &str) -> ResultType<()> {
+    return Ok(());
     let rs_pk = get_rs_pk(key);
     let rs_pk = get_rs_pk(key);
     let Some(rs_pk) = rs_pk else {
